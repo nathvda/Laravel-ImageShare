@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Image;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ImageController;
@@ -25,7 +26,7 @@ Route::get('/register',function () {
 })->middleware('guest');
 
 Route::get('/feed',function () {
-    return view('Feed.index');
+    return view('Feed.index', ['images' => Image::get()]);
 })->middleware('auth');
 
 Route::get('/create',function () {
