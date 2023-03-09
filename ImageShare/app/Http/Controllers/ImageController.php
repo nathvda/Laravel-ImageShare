@@ -60,9 +60,9 @@ class ImageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Image $id)
+    public function show(String $id)
     {
-        return view('/Images/show', ['image', Image::find($id)]);
+        return view('/Images/show', ['image' => Image::find($id)]);
     }
 
     /**
