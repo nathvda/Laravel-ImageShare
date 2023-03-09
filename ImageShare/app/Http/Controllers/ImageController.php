@@ -46,7 +46,7 @@ class ImageController extends Controller
             'description' => $request['description']
         ]);
 
-
+            return redirect('/feed')->with('success', 'Your image was added');
         }
 
         catch (\Exception $th){
@@ -60,9 +60,9 @@ class ImageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Image $image)
+    public function show(Image $id)
     {
-        
+        return view('/Images/show', ['image', Image::find($id)]);
     }
 
     /**

@@ -32,7 +32,6 @@ Route::get('/create',function () {
     return view('Images.create');
 })->middleware('auth');
 
-
 Route::post('/login', [SessionController::class, 'create'])->middleware('guest');
 
 Route::post('/logout', [SessionController::class, 'destroy'])->middleware('auth');
@@ -41,3 +40,4 @@ Route::post('/register', [UserController::class, 'create'])->middleware('guest')
 
 Route::post('/create', [ImageController::class, 'store'])->middleware('auth');
 
+Route::get('/viewcard/{image:id}', [ImageController::class, 'show'])->middleware('auth');

@@ -33,6 +33,6 @@
         @if($errors->has('image'))
         {{$errors->first('image')}}
         @endif
-        <button class="bg-slate-400 mt-5 p-2 rounded-md text-white from-slate-400 to-slate-700" type="submit">Me connecter</button>
+        <button class="bg-slate-400 mt-5 p-2 rounded-md text-white from-slate-400 to-slate-700" type="submit">Add image</button>
     </form>
 @endsection
