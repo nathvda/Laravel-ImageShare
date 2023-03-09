@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\SessionController;
 
 /*
@@ -27,10 +28,16 @@ Route::get('/feed',function () {
     return view('Feed.index');
 })->middleware('auth');
 
+Route::get('/create',function () {
+    return view('Images.create');
+})->middleware('auth');
+
+
 Route::post('/login', [SessionController::class, 'create'])->middleware('guest');
 
 Route::post('/logout', [SessionController::class, 'destroy'])->middleware('auth');
 
 Route::post('/register', [UserController::class, 'create'])->middleware('guest');
 
+Route::post('/create', [ImageController::class, 'store'])->middleware('auth');
 

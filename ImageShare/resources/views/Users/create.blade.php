@@ -65,7 +65,7 @@
         @endif
         <button class="bg-slate-400 mt-5 p-2 rounded-md text-white from-slate-400 to-slate-700" type="submit">Me connecter</button>
     </form>
-    <a href="/register" class="text-white font-normal filter drop-shadow-md">No account yet ? Create one for free.</a>
+    
 </body>
 
 </html>
