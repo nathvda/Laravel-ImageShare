@@ -42,3 +42,5 @@ Route::post('/register', [UserController::class, 'create'])->middleware('guest')
 Route::post('/create', [ImageController::class, 'store'])->middleware('auth');
 
 Route::get('/viewcard/{image:id}', [ImageController::class, 'show'])->middleware('auth');
+
+Route::get('/profile/{user:id}', [UserController::class, 'show'])->middleware('auth');
