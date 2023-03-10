@@ -15,13 +15,13 @@ class Like extends Component
     public function mount($image){
         $this->image = \App\Models\Image::find($image);
 
-        if(\App\Models\Like::where('user_id', auth()->user()->id)->where('image_id', $image)->count() > 0){
+        if(\App\Models\Like::where('user_id', auth()->user()->id)->where('image_id', $image)->count() == 0){
         
-            $this->liked = true;
+            $this->liked = false;
 
         } else {
 
-            $this->liked = false;
+            $this->liked = true;
         }
     }
 
@@ -47,13 +47,13 @@ class Like extends Component
 
     }
 
-    return view('livewire.like', ['image' => \App\Models\Image::find($this->image_id)->like, 'liked' => $this->liked ]);
+    $this->image = \App\Models\Image::find($this->image_id);
 
     }
 
 
     public function render()
     {
-        return view('livewire.like', ['image' => $this->image->like, 'liked' => $this->liked ]);
+        return view('livewire.like', ['image' => $this->image->likes, 'liked' => $this->liked ]);
     }
 }

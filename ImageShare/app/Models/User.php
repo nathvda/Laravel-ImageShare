@@ -8,6 +8,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class User extends Authenticatable
 {
@@ -57,4 +58,22 @@ class User extends Authenticatable
     {
     return $this->hasMany(Like::class, 'user_id', 'id');
     }
+
+
+    public function subscriptions(): BelongsToMany
+    {
+        return $this->BelongsToMany(User::class, 'subscriptions', 'follower_id', 'followed_id');
+    }
+
+    public function subscribers(): BelongsToMany
+    {
+        return $this->BelongsToMany(User::class, 'subscriptions', 'followed_id', 'follower_id');
+    }
+
+    public function isSubscribed($id)
+    {
+        $subs = $this->subscriptions()->where('followed_id', $id)->where('follower_id', auth()->user()->id);
+        return ($subs->count() > 0) ? true : false ;
+    }
+
 }
