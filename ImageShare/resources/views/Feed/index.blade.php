@@ -7,7 +7,7 @@
 
 @foreach($images as $image)
 
-<div class="mb-4 flex flex-col flew-wrap-0 break-inside-avoid-column">
+<div class="group mb-4 flex flex-col flew-wrap-0 break-inside-avoid-column relative">
 <a href="/viewcard/{{$image->id}}">
     <img class="w-48 aspect-auto flex-initial rounded-md" src="/images/assets/{{$image->name}}"/>
 </a>

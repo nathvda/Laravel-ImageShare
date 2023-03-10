@@ -18,12 +18,10 @@
 <div class="gap-8 w-5/7 columns-5  break-inside-avoid-column">
 
     @foreach($user->images as $image)
-    <div class="mb-4 flex flex-col break-inside-avoid-column">
+    <div class="group mb-4 flex flex-col flew-wrap-0 break-inside-avoid-column relative">
     <a href="/viewcard/{{$image->id}}">
-        <img class="w-48 mb-10 aspect-auto flex-initial rounded-md" src="/images/assets/{{$image->name}}" />
-        
-    </a>
-    @livewire('like', ['image' => $image->id])
+        <img class="w-48 aspect-auto flex-initial rounded-md" src="/images/assets/{{$image->name}}" />
+    </a>@livewire('like', ['image' => $image->id])
 </div>
 
     @endforeach
@@ -36,9 +34,9 @@
 
 
     @foreach($user->likes as $liked)
-    <div class="mb-4 flex flex-col break-inside-avoid-column">
+    <div class="group mb-4 flex flex-col flew-wrap-0 break-inside-avoid-column relative">
         <a href="/viewcard/{{$liked->image->id}}">
-            <img class="w-48 mb-10 aspect-auto flex-initial rounded-md" src="/images/assets/{{$liked->image->name}}" />
+            <img class="w-48 aspect-auto flex-initial rounded-md" src="/images/assets/{{$liked->image->name}}" />
         </a>
     @livewire('like', ['image' => $liked->image->id])
     </div>
@@ -52,9 +50,9 @@
     @foreach($user->subscriptions as $subs)
 
     @foreach($subs->images as $image)
-    <div class="mb-4 flex flex-col break-inside-avoid-column">
+    <div class="group mb-4 flex flex-col flew-wrap-0 break-inside-avoid-column relative">
         <a href="/viewcard/{{$image->id}}">
-            <img class="w-48 mb-10 aspect-auto flex-initial rounded-md" src="/images/assets/{{$image->name}}" />
+            <img class="w-48 aspect-auto flex-initial rounded-md" src="/images/assets/{{$image->name}}" />
         </a>
         @livewire('like', ['image' => $image->id])
     </div>
