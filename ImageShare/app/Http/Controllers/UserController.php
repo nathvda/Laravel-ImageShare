@@ -20,7 +20,7 @@ class UserController extends Controller
             'username' => $request['username'],
             'avatar' => $newImageName,
             'email' => $request['email'],
-            'password' => bcrypt('password')
+            'password' => bcrypt($request['password'])
         ]);
 
         auth()->login($user);

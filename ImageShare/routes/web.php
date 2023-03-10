@@ -33,7 +33,7 @@ Route::get('/create',function () {
     return view('Images.create');
 })->middleware('auth');
 
-Route::post('/login', [SessionController::class, 'create'])->middleware('guest');
+Route::post('/login', [SessionController::class, 'store']);
 
 Route::post('/logout', [SessionController::class, 'destroy'])->middleware('auth');
 

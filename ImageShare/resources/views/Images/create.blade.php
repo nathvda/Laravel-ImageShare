@@ -2,9 +2,9 @@
 @section('title', 'Add a new image')
 @section('content')
 
-<form id="upload_form" method="post" action="/create" class="w-2/5 bottom-9 p-4 rounded-md bg-white shadow-md" enctype="multipart/form-data">
+<form id="upload_form" method="post" action="/create" class="w-2/5 bottom-9 p-4 rounded-md bg-white justify-center shadow-md" enctype="multipart/form-data">
         @csrf
-        <h3 class="font-bold text-xl text-slate-500">Register</h3>
+        <h3 class="font-bold text-xl text-slate-500">Create a new image</h3>
         <div class="flex justify-between items-center w-full mt-6">
             <label class="font-bolder text-slate-700">Title</label>
             <input class="p-2 border-solid border rounded-md border-slate-100 text-sm w-3/5" type="text" name="title">
