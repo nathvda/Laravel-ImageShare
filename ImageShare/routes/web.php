@@ -26,7 +26,7 @@ Route::get('/register',function () {
 })->middleware('guest');
 
 Route::get('/feed',function () {
-    return view('Feed.index', ['images' => Image::get()]);
+    return view('Feed.index', ['images' => Image::inRandomOrder()->get()]);
 })->middleware('auth');
 
 Route::get('/create',function () {

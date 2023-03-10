@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="h-full" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="min-h-full" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
@@ -12,7 +12,7 @@
 
 </head>
 
-<body class="antialiased flex bg-gradient-to-br from-slate-200 to-slate-500 bg-slate-200 flex-col justify-start items-center gap-8">
+<body class="antialiased min-h-screen bg-auto flex bg-gradient-to-br from-slate-200 to-slate-500 bg-slate-200 flex-col justify-start items-center gap-8">
  
 <nav class="flex flex-row p-5 bg-white w-full justify-end items-center top-0 left-0 right-0 shadow-md gap-8 sticky">
 <a href="/feed" aria-label="home"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill fill-slate-500" viewBox="0 0 16 16">

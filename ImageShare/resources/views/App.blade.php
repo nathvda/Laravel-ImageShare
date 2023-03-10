@@ -19,14 +19,17 @@
             <label for="email" class="font-bolder text-slate-700">Email</label>
             <input class="border-solid p-2 border rounded-md border-slate-100 text-sm w-3/5" id="email" type="email" name="email"/>
         </div>
-        @if($errors->has('email'))
+        <span class="text-red-500 text-sm">@if($errors->has('email'))
         {{$errors->first('email')}}
-        @endif
+        @endif</span>
         <div class="flex justify-between items-center w-full mt-6">
             <label class="font-bolder text-slate-700" for="password">Password</label>
             <input class="p-2 border-solid border rounded-md border-slate-100 text-sm w-3/5" id="passowrd" type="password" name="password"/>
         </div>
-        <button class="bg-slate-400 mt-5 p-2 rounded-md text-white from-slate-400 to-slate-700" type="submit">Me connecter</button>
+        <span class="text-red-500 text-sm">@if($errors->has('password'))
+        {{$errors->first('password')}}
+        @endif</span>
+        <div class="flex justify-between items-center w-full"><button class="bg-slate-400 mt-5 p-2 rounded-md text-white from-slate-400 to-slate-700" type="submit">Me connecter</button></div>
     </form>
     <a href="/register" class="text-white font-normal filter drop-shadow-md">No account yet ? Create one for free.</a>
 </body>

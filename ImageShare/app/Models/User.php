@@ -51,12 +51,12 @@ class User extends Authenticatable
 
     public function images(): HasMany
     {
-    return $this->hasMany(Image::class, 'user_id', 'id');
+    return $this->hasMany(Image::class, 'user_id', 'id')->inRandomOrder();
     }
 
     public function likes(): HasMany
     {
-    return $this->hasMany(Like::class, 'user_id', 'id');
+    return $this->hasMany(Like::class, 'user_id', 'id')->latest();
     }
 
 
