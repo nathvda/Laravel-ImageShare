@@ -3,7 +3,8 @@
 
 @section('content')
 
-<div class="bg-slate-100 rounded-md p-10 self-start ml-8"><img class="w-48 h-48 object-cover rounded-full" src="/images/{{$user->avatar}}" />
+<div clas="flex flex-row w-full">
+<div class="bg-slate-100 rounded-md p-10 self-start mb-10"><img class="w-48 h-48 object-cover rounded-full" src="/images/{{$user->avatar}}" />
     <h3 class="text-6xl">@ {{ $user->username}}</h3>
     <div class="p-2">
         <h4>{{$user->lastname}} {{$user->firstname}}</h4>
@@ -14,8 +15,9 @@
 @endif
 
 </div>
+<div class="">
 
-<div class="gap-8 w-5/7 columns-5  break-inside-avoid-column">
+<div class="gap-8 w-5/7 columns-5 break-inside-avoid-column">
 
     @foreach($user->images as $image)
     <div class="group mb-4 flex flex-col flew-wrap-0 break-inside-avoid-column relative">
@@ -29,7 +31,7 @@
 </div>
 
 @if($user->id === auth()->user()->id)
-<h3>Liked posts</h3>
+<h3 class="text-3xl font-bold">Liked posts</h3>
 <div class="gap-8 w-5/7 columns-5 break-inside-avoid-column">
 
 
@@ -62,5 +64,6 @@
 
 </div>
 @endif
+</div>
 
 @endsection

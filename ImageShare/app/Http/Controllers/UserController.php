@@ -14,7 +14,7 @@ class UserController extends Controller
     
         $request->file('avatar')->move(public_path('images'), $newImageName);
         
-        $user =  User::create([
+        $user = User::create([
             'lastname' => $request['lastname'],
             'firstname' => $request['firstname'],
             'username' => $request['username'],
